@@ -27,6 +27,28 @@ body {
     box-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
 
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.info-header h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-box > p {
+    margin-top: 0px;
+}
+
+.info-hoopoe {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .info-box a {
     color: #fff;
     text-decoration: underline;
