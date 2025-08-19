@@ -67,6 +67,17 @@ body {
     transform: translateX(-50%);
     text-align: center;
   }
+    .info-header {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .info-header h2 {
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+    }
+    .info-hoopoe {
+        margin-bottom: 0.25rem;
+    }
 }
 
 .image-container {
