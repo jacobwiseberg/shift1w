@@ -103,12 +103,9 @@ body {
     filter: grayscale(0.2);
     transition: filter 0.2s, transform 0.2s;
 }
-.lang-buttons a:hover {
-    filter: grayscale(0) drop-shadow(0 0 4px #aad8ff);
-    transform: scale(1.15);
-}
+
 .lang-buttons a:hover .flag-icon {
-    filter: grayscale(0) drop-shadow(0 0 4px #aad8ff);
+    filter: grayscale(0) drop-shadow(0 0 2px #aad8ff);
 }
 
 @media (max-width: 600px) {
