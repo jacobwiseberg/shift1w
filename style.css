@@ -10,6 +10,10 @@ body {
     background-position: center;
 }
 
+body.hebrew-bg {
+    background-image: url('assets/tree_view.jpg');
+}
+
 .info-box {
     position: fixed;
     top: 24px;
