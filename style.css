@@ -1,17 +1,19 @@
 body {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     background-image: url('assets/central_park.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 body.hebrew-bg {
     background-image: url('assets/kite_sea.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .info-box {
@@ -22,7 +24,7 @@ body.hebrew-bg {
     color: #fff;
     padding: 20px 28px;
     border-radius: 10px;
-    max-width: 400px;
+    max-width: 420px;
     font-family: 'Courier New', Courier, monospace;
 }
 
