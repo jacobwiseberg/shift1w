@@ -1,8 +1,11 @@
-body {
+html, body {
     width: 100%;
     min-height: 100vh;
     margin: 0;
     padding: 0;
+}
+
+body {
     background-image: url('assets/central_park.jpg');
     background-size: cover;
     background-position: center;
