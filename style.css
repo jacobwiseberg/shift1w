@@ -93,6 +93,10 @@ body.hebrew-bg {
     gap: 8px;
 }
 
+.lang-buttons-mobile {
+    display: none;
+}
+
 .lang-buttons a {
     font-size: 1.5rem;
     text-decoration: none;
@@ -101,6 +105,11 @@ body.hebrew-bg {
     display: flex;
     align-items: center;
 }
+.lang-buttons-mobile .flag-icon {
+    width: 2.2em;
+    height: 1.3em;
+}
+
 .flag-icon {
     width: 1.5em;
     height: .9em;
@@ -135,5 +144,24 @@ body.hebrew-bg {
     }
     .profile-hoopoe {
         margin-bottom: 0.25rem;
+    }
+    .lang-buttons-mobile {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 2.5rem;
+        z-index: 100;
+        background: none;
+        padding: 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+    .lang-buttons-mobile a:hover .flag-icon {
+        filter: grayscale(0) drop-shadow(0 0 2px #aad8ff);
+    }
+    .lang-buttons {
+        display: none;
     }
 }
