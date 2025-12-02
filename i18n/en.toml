@@ -1,0 +1,32 @@
+[languageName]
+other = "English"
+
+[fullName]
+other = "Jacob Wiseberg"
+
+[copyrightName]
+other = "Jacob Wiseberg"
+
+[allRightsReserved]
+other = "All rights reserved"
+
+[bio1]
+other = "Professionally, I develop software."
+
+[bio2]
+other = "I also enjoy tinkering in infosec."
+
+[github]
+other = "GitHub"
+
+[linkedin]
+other = "LinkedIn"
+
+[posts]
+other = "Posts"
+
+[tags]
+other = "Tags"
+
+[categories]
+other = "Categories"

@@ -1,0 +1,16 @@
+baseURL = 'https://shift1w.com/'
+title = '!W'
+defaultContentLanguage = 'en'
+disableKinds = ['RSS', 'sitemap']
+
+[languages]
+  [languages.en]
+    languageCode = 'en-us'
+    languageName = 'English'
+    weight = 1
+    
+  [languages.he]
+    languageCode = 'he'
+    languageName = 'עברית'
+    languageDirection = 'rtl'
+    weight = 2
