@@ -4,6 +4,8 @@
   {{ partial "head.html" . }}
 </head>
 <body{{ if eq site.Language.Lang "he" }} class="hebrew-bg"{{ end }}>
+  {{ partial "mobile-topbar.html" . }}
+  {{ partial "sidebar.html" . }}
   {{ block "main" . }}{{ end }}
   {{ partial "footer.html" . }}
 </body>

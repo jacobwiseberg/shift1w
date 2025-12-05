@@ -10,6 +10,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 body.hebrew-bg {
@@ -17,12 +18,20 @@ body.hebrew-bg {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.info-box {
+.sidebar-container {
     position: fixed;
     top: 24px;
     right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 10;
+}
+
+.info-box {
     background: rgba(0,0,0,0.7);
     color: #fff;
     padding: 20px 28px;
@@ -31,19 +40,55 @@ body.hebrew-bg {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.nav-box {
+.content-box {
     position: fixed;
-    top: 240px;
-    right: 24px;
+    top: 24px;
+    left: 24px;
+    right: 520px;
     background: rgba(0,0,0,0.7);
     color: #fff;
-    padding: 20px 40px;
+    padding: 30px 40px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-y: auto;
+    max-height: calc(100vh - 48px);
+}
+
+.content-box h1 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.content-box h2 {
+    color: #fff;
+}
+
+.content-box a {
+    color: #aad8ff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.content-box a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.content-box section {
+    margin-bottom: 2rem;
+}
+
+.nav-box {
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 20px 28px;
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    align-items: center;
+    align-items: flex-start;
+    width: fit-content;
 }
 
 .nav-box a {
@@ -56,6 +101,71 @@ body.hebrew-bg {
 .nav-box a:hover {
     color: #aad8ff;
     text-decoration: underline;
+}
+
+/* Mobile top bar */
+.mobile-topbar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .info-box,
+    .nav-box {
+        display: none;
+    }
+    
+    .mobile-topbar {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.9);
+        color: #fff;
+        padding: 12px 16px;
+        font-family: 'Courier New', Courier, monospace;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    
+    .mobile-topbar .site-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .mobile-topbar nav {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+    
+    .mobile-topbar nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s;
+    }
+    
+    .mobile-topbar nav a:hover {
+        color: #aad8ff;
+    }
+    
+    .mobile-profile {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .mobile-profile img {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 }
 
 .info-box > p {
@@ -73,14 +183,26 @@ body.hebrew-bg {
 }
 
 .profile {
+    margin-bottom: 1rem;
+}
+
+.profile-header {
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .profile h2 {
     font-size: 2rem;
-    margin-bottom: 1.5rem;
+    margin: 0;
+}
+
+.profile .bio {
+    font-size: 1rem;
+    margin: 0 0 1rem 0;
+    color: #fff;
+    line-height: 1.4;
 }
 
 .profile-hoopoe {
@@ -153,22 +275,14 @@ body.hebrew-bg {
     filter: grayscale(0) drop-shadow(0 0 2px #aad8ff);
 }
 
-@media (max-width: 600px) {
-    .info-box {
-        left: 50%;
-        right: auto;
-        top: 16px;
-        transform: translateX(-50%);
-        text-align: center;
-    }
-    .nav-box {
-        left: 50%;
+@media (max-width: 768px) {
+    .content-box {
+        position: relative;
+        left: auto;
         right: auto;
         top: auto;
-        bottom: 5rem;
-        transform: translateX(-50%);
-        width: auto;
-        max-width: calc(100% - 32px);
+        margin: 60px 16px 4rem 16px;
+        max-height: none;
     }
     .profile {
         flex-direction: column;

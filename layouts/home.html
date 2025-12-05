@@ -1,23 +1,2 @@
 {{ define "main" }}
-<div class="info-box">
-  <div class="profile">
-    <img src="{{ "assets/hoopoe.jpg" | absURL }}" alt="Hoopoe" class="profile-hoopoe">
-    <h2>{{ i18n "fullName" }}</h2>
-  </div>
-  <p>
-    {{ i18n "bio1" }}<br>
-    {{ i18n "bio2" }}<br>
-  </p>
-  <div class="info-links">
-    <a href="https://github.com/jacobwiseberg" target="_blank" rel="noopener noreferrer">{{ i18n "github" }}</a> |
-    <a href="https://www.linkedin.com/in/jacob-wiseberg/" target="_blank" rel="noopener noreferrer">{{ i18n "linkedin" }}</a> |
-    <a href="mailto:jake@shift1w.com" target="_blank" rel="noopener noreferrer">jake@shift1w.com</a> |
-    <a href="{{ "assets/a577fd22b70dbd624d53863520ee598580f2bc024586ea7b0f1d50652f733d1c.asc" | absURL }}" download>PGP</a>
-  </div>
-</div>
-<div class="nav-box">
-  <a href="/posts">{{ i18n "posts" }}</a>
-  <a href="/tags">{{ i18n "tags" }}</a>
-  <a href="/categories">{{ i18n "categories" }}</a>
-</div>
 {{ end }}

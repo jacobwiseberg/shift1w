@@ -30,3 +30,15 @@ other = "תגיות"
 
 [categories]
 other = "קטגוריות"
+
+[about]
+other = "אודות"
+
+[home]
+other = "בית"
+
+[tag]
+other = "תגית"
+
+[category]
+other = "קטגוריה"

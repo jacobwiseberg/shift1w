@@ -1,7 +1,10 @@
 {{ define "main" }}
+<div class="content-box">
   <h1>{{ .Title }}</h1>
+  <p><small>{{ i18n .Data.Singular | default .Data.Singular }}</small></p>
   {{ .Content }}
   {{ range .Pages }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
   {{ end }}
+</div>
 {{ end }}

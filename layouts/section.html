@@ -1,10 +1,51 @@
 {{ define "main" }}
+<div class="content-box">
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  {{ range .Pages }}
+  
+  {{- $pages := .Pages }}
+  {{- if eq .Section "posts" }}
+    {{- $allPages := slice }}
+    {{- range site.Pages }}
+      {{- if eq .Section "posts" }}
+        {{- if and (not hugo.IsServer) .Draft }}
+          {{/* Skip draft posts in production */}}
+        {{- else }}
+          {{- $allPages = $allPages | append . }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+    {{- $pages = $allPages }}
+  {{- else }}
+    {{- if not hugo.IsServer }}
+      {{- $pages = where .Pages "Draft" false }}
+    {{- end }}
+  {{- end }}
+  
+  {{- $paginator := .Paginate $pages }}
+  {{- range $paginator.Pages }}
     <section>
       <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+      {{- if .Date }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{- end }}
       {{ .Summary }}
+      {{- if .Truncated }}
+      <a href="{{ .RelPermalink }}">Read more...</a>
+      {{- end }}
     </section>
-  {{ end }}
+  {{- end }}
+  
+  {{- if gt $paginator.TotalPages 1 }}
+  <nav class="pagination">
+    {{- if $paginator.HasPrev }}
+    <a href="{{ $paginator.Prev.URL }}">← Previous</a>
+    {{- end }}
+    <span>Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+    {{- if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}">Next →</a>
+    {{- end }}
+  </nav>
+  {{- end }}
+</div>
 {{ end }}

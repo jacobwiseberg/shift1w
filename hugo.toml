@@ -1,16 +1,27 @@
 baseURL = 'https://shift1w.com/'
 title = '!W'
 defaultContentLanguage = 'en'
-disableKinds = ['RSS', 'sitemap']
+defaultContentLanguageInSubdir = false
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  description = 'Personal blog and portfolio'
+  author = 'Jacob Wiseberg'
+  [params.social]
+    github = 'jacobwiseberg'
 
 [languages]
   [languages.en]
     languageCode = 'en-us'
     languageName = 'English'
     weight = 1
+    disabled = false
     
   [languages.he]
     languageCode = 'he'
     languageName = 'עברית'
     languageDirection = 'rtl'
     weight = 2
+    disabled = false

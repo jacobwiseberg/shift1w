@@ -30,3 +30,15 @@ other = "Tags"
 
 [categories]
 other = "Categories"
+
+[about]
+other = "About"
+
+[home]
+other = "Home"
+
+[tag]
+other = "Tag"
+
+[category]
+other = "Category"

@@ -1,21 +1,12 @@
-<div class="lang-buttons-mobile">
-  {{ if eq site.Language.Lang "he" }}
-    <a href="/he/" title="עברית"><img src="{{ "assets/il.svg" | absURL }}" alt="עברית" class="flag-icon"></a>
-    <a href="/" title="English"><img src="{{ "assets/usa.svg" | absURL }}" alt="English" class="flag-icon"></a>
-  {{ else }}
-    <a href="/" title="English"><img src="{{ "assets/usa.svg" | absURL }}" alt="English" class="flag-icon"></a>
-    <a href="/he/" title="עברית"><img src="{{ "assets/il.svg" | absURL }}" alt="עברית" class="flag-icon"></a>
-  {{ end }}
-</div>
+
 <div class="bottom-bar">
   &copy; {{ now.Year }} {{ i18n "copyrightName" }}. {{ i18n "allRightsReserved" }}.
   <div class="lang-buttons">
-    {{ if eq site.Language.Lang "he" }}
-      <a href="/he/" title="עברית"><img src="{{ "assets/il.svg" | absURL }}" alt="עברית" class="flag-icon"></a>
-      <a href="/" title="English"><img src="{{ "assets/usa.svg" | absURL }}" alt="English" class="flag-icon"></a>
-    {{ else }}
-      <a href="/" title="English"><img src="{{ "assets/usa.svg" | absURL }}" alt="English" class="flag-icon"></a>
-      <a href="/he/" title="עברית"><img src="{{ "assets/il.svg" | absURL }}" alt="עברית" class="flag-icon"></a>
-    {{ end }}
+    {{- range site.Home.AllTranslations }}
+      <a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}">
+        <img src="{{ cond (eq .Language.Lang "he") ("assets/il.svg" | absURL) ("assets/usa.svg" | absURL) }}" 
+             alt="{{ .Language.LanguageName }}" class="flag-icon">
+      </a>
+    {{- end }}
   </div>
 </div>
