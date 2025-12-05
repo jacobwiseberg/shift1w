@@ -61,15 +61,6 @@ The GitHub Actions workflow will automatically:
 
 Cloudflare Pages will then automatically deploy the changes from `master`.
 
-## Cloudflare Pages Configuration
-
-Your Cloudflare Pages should be configured to:
-- Connect to the `jacobwiseberg/shift1w` GitHub repository
-- Deploy from the `master` branch
-- Production branch: `master`
-- Build configuration: None (pre-built by GitHub Actions)
-- Build output directory: `/` (root, since `master` contains only built files)
-
 ## Site Structure
 
 - `content/` - Markdown content files
