@@ -1,0 +1,317 @@
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('/assets/central_park.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body.hebrew-bg {
+    background-image: url('/assets/kite_sea.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.sidebar-container {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 10;
+}
+
+.info-box {
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 20px 28px;
+    border-radius: 10px;
+    max-width: 420px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.content-box {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    right: 520px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-y: auto;
+    max-height: calc(100vh - 48px);
+}
+
+.content-box h1 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.content-box h2 {
+    color: #fff;
+}
+
+.content-box a {
+    color: #aad8ff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.content-box a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.content-box section {
+    margin-bottom: 2rem;
+}
+
+.nav-box {
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 20px 28px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    width: fit-content;
+}
+
+.nav-box a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 1rem;
+}
+
+.nav-box a:hover {
+    color: #aad8ff;
+    text-decoration: underline;
+}
+
+/* Mobile top bar */
+.mobile-topbar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .info-box,
+    .nav-box {
+        display: none;
+    }
+    
+    .mobile-topbar {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.9);
+        color: #fff;
+        padding: 12px 16px;
+        font-family: 'Courier New', Courier, monospace;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    
+    .mobile-topbar .site-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .mobile-topbar nav {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+    
+    .mobile-topbar nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s;
+    }
+    
+    .mobile-topbar nav a:hover {
+        color: #aad8ff;
+    }
+    
+    .mobile-profile {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .mobile-profile img {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+.info-box > p {
+    margin-top: 0px;
+}
+
+.info-box a {
+    color: #fff;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.info-box a:hover {
+    color: #aad8ff;
+}
+
+.profile {
+    margin-bottom: 1rem;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.profile h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.profile .bio {
+    font-size: 1rem;
+    margin: 0 0 1rem 0;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.profile-hoopoe {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#bg-image {
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+}
+
+.bottom-bar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    text-align: center;
+    padding: 12px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: .75rem;
+    z-index: 10;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.25);
+    box-sizing: border-box;
+}
+
+.lang-buttons {
+    position: absolute;
+    right: 12px;
+    bottom: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.lang-buttons-mobile {
+    display: none;
+}
+
+.lang-buttons a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    filter: grayscale(0.2);
+    transition: filter 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+}
+.lang-buttons-mobile .flag-icon {
+    width: 2.2em;
+    height: 1.3em;
+}
+
+.flag-icon {
+    width: 1.5em;
+    height: .9em;
+    object-fit: contain;
+    display: inline-block;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+    margin: 0 2px;
+    filter: grayscale(0.2);
+    transition: filter 0.2s, transform 0.2s;
+}
+
+.lang-buttons a:hover .flag-icon {
+    filter: grayscale(0) drop-shadow(0 0 2px #aad8ff);
+}
+
+@media (max-width: 768px) {
+    .content-box {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        margin: 60px 16px 4rem 16px;
+        max-height: none;
+    }
+    .profile {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .profile h2 {
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+    }
+    .profile-hoopoe {
+        margin-bottom: 0.25rem;
+    }
+    .lang-buttons-mobile {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 2.5rem;
+        z-index: 100;
+        background: none;
+        padding: 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+    .lang-buttons-mobile a:hover .flag-icon {
+        filter: grayscale(0) drop-shadow(0 0 2px #aad8ff);
+    }
+    .lang-buttons {
+        display: none;
+    }
+}
