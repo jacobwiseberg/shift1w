@@ -2,14 +2,6 @@
 
 Personal website built with Hugo and deployed via GitHub Actions.
 
-## Security & Public Repository
-
-This repository is public to showcase the website's architecture. Security measures in place:
-
-- ✅ **No Secrets in Code**: All sensitive tokens are stored in GitHub Secrets
-- ✅ **Deployment Control**: Deployments only trigger from the `stage` branch
-- ✅ **Email Protection**: Contact email is obfuscated using HTML entities to prevent scraping
-
 ## Deployment Workflow
 
 This site uses a three-branch deployment strategy for safety:
@@ -74,3 +66,4 @@ Cloudflare Pages will then automatically deploy the changes from `master`.
 © 2025 Jacob Wiseberg. All rights reserved.
 
 The code structure and templates in this repository may be used as reference, but content and design are proprietary. See [LICENSE](LICENSE) for details.
+
