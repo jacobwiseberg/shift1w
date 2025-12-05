@@ -2,6 +2,21 @@
 
 Personal website built with Hugo and deployed via GitHub Actions.
 
+## Security & Public Repository
+
+This repository is public to showcase the website's architecture. Security measures in place:
+
+- ✅ **Branch Protection**: The `master` and `stage` branches are protected
+  - Only GitHub Actions can push to `master`
+  - Pull requests required to merge to `stage`
+- ✅ **No Secrets in Code**: All sensitive tokens are stored in GitHub Secrets
+- ✅ **Deployment Control**: Deployments only trigger from the `stage` branch
+- ✅ **Email Protection**: Contact email is obfuscated using HTML entities to prevent scraping
+
+### Contributing
+
+While this is a personal site, suggestions and bug reports are welcome via issues. However, only the repository owner can trigger deployments.
+
 ## Deployment Workflow
 
 This site uses a three-branch deployment strategy for safety:
@@ -69,3 +84,9 @@ Your Cloudflare Pages should be configured to:
 - `static/` - Static assets
 - `i18n/` - Internationalization files (English & Hebrew)
 - `hugo.toml` - Hugo configuration
+
+## License
+
+© 2025 Jacob Wiseberg. All rights reserved.
+
+The code structure and templates in this repository may be used as reference, but content and design are proprietary. See [LICENSE](LICENSE) for details.

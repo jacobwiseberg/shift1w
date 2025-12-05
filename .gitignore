@@ -16,3 +16,13 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Secrets and sensitive files
+.env
+.env.*
+*.key
+*.pem
+secrets.yaml
+secrets.json
+*secret*
+*credentials*
