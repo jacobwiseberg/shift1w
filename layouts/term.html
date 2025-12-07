@@ -3,8 +3,47 @@
   <h1>{{ .Title }}</h1>
   <p><small>{{ i18n .Data.Singular | default .Data.Singular }}</small></p>
   {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-  {{ end }}
+  
+  {{- $currentTitle := .Title }}
+  {{- $taxonomy := .Data.Singular }}
+  {{- $allPages := slice }}
+  
+  {{- range site.Sites }}
+    {{- $sitePages := .RegularPages }}
+    {{- range $sitePages }}
+      {{- if eq .Section "posts" }}
+        {{- $found := false }}
+        {{- if eq $taxonomy "tag" }}
+          {{- range .Params.tags }}
+            {{- if eq . $currentTitle }}
+              {{- $found = true }}
+            {{- end }}
+          {{- end }}
+        {{- else if eq $taxonomy "category" }}
+          {{- range .Params.categories }}
+            {{- if eq . $currentTitle }}
+              {{- $found = true }}
+            {{- end }}
+          {{- end }}
+        {{- end }}
+        {{- if $found }}
+          {{- if and (not hugo.IsServer) .Draft }}
+            {{/* Skip drafts in production */}}
+          {{- else }}
+            {{- $allPages = $allPages | append . }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+  
+  {{- range $allPages }}
+    <section>
+      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+      {{- if .Date }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{- end }}
+    </section>
+  {{- end }}
 </div>
 {{ end }}

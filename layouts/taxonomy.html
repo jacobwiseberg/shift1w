@@ -2,8 +2,32 @@
 <div class="content-box">
   <h1>{{ i18n .Data.Plural | default .Title }}</h1>
   {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-  {{ end }}
+  
+  {{- $allTerms := slice }}
+  {{- $termMap := dict }}
+  {{- $taxonomyKey := .Data.Plural }}
+  
+  {{- range site.Sites }}
+    {{- range .RegularPages }}
+      {{- if eq .Section "posts" }}
+        {{- $terms := slice }}
+        {{- if eq $taxonomyKey "tags" }}
+          {{- $terms = .Params.tags }}
+        {{- else if eq $taxonomyKey "categories" }}
+          {{- $terms = .Params.categories }}
+        {{- end }}
+        {{- range $terms }}
+          {{- if not (index $termMap .) }}
+            {{- $termMap = merge $termMap (dict . true) }}
+            {{- $allTerms = $allTerms | append . }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+  
+  {{- range sort $allTerms }}
+    <h2><a href="{{ $.RelPermalink }}{{ . | urlize }}/">{{ . }}</a></h2>
+  {{- end }}
 </div>
 {{ end }}

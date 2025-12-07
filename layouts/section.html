@@ -6,12 +6,14 @@
   {{- $pages := .Pages }}
   {{- if eq .Section "posts" }}
     {{- $allPages := slice }}
-    {{- range site.Pages }}
-      {{- if eq .Section "posts" }}
-        {{- if and (not hugo.IsServer) .Draft }}
-          {{/* Skip draft posts in production */}}
-        {{- else }}
-          {{- $allPages = $allPages | append . }}
+    {{- range site.Sites }}
+      {{- range .RegularPages }}
+        {{- if eq .Section "posts" }}
+          {{- if and (not hugo.IsServer) .Draft }}
+            {{/* Skip draft posts in production */}}
+          {{- else }}
+            {{- $allPages = $allPages | append . }}
+          {{- end }}
         {{- end }}
       {{- end }}
     {{- end }}
