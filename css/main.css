@@ -45,13 +45,35 @@ body.hebrew-bg {
     top: 24px;
     left: 24px;
     right: 520px;
-    background: rgba(0,0,0,0.7);
+    bottom: 72px;
+    background: rgba(0,0,0,0.85);
     color: #fff;
     padding: 30px 40px;
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
     overflow-y: auto;
-    max-height: calc(100vh - 48px);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(170, 216, 255, 0.5) rgba(0, 0, 0, 0.3);
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+.content-box::-webkit-scrollbar {
+    width: 10px;
+}
+
+.content-box::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.content-box::-webkit-scrollbar-thumb {
+    background: rgba(170, 216, 255, 0.5);
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.content-box::-webkit-scrollbar-thumb:hover {
+    background: rgba(170, 216, 255, 0.8);
 }
 
 .content-box h1 {
@@ -281,7 +303,8 @@ body.hebrew-bg {
         left: auto;
         right: auto;
         top: auto;
-        margin: 100px 16px 4rem 16px;
+        bottom: auto;
+        margin: 100px 16px 6rem 16px;
         max-height: none;
     }
     .profile {
