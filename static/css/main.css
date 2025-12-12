@@ -1,3 +1,11 @@
+.info-box .info-links a {
+    color: #fff !important;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.info-box .info-links a:hover {
+    color: #aad8ff !important;
+}
 .profile-header h2 {
     width: 100%;
     text-align: inherit;
@@ -27,6 +35,15 @@
         padding: 0;
         font-size: 0.95rem;
         flex-wrap: wrap;
+        color: #fff;
+    }
+    body.home .info-box .info-links a {
+        color: #fff !important;
+        text-decoration: underline;
+        transition: color 0.2s;
+    }
+    body.home .info-box .info-links a:hover {
+        color: #aad8ff !important;
     }
     body.home .info-links a {
         padding: 0 2px;
@@ -77,7 +94,7 @@
         display: flex;
         justify-content: center;
         gap: 16px;
-        margin: 16px 0 0 0;
+        margin: 24px 0 56px 0;
         width: 100%;
     }
     .lang-buttons-mobile-home .flag-icon {
