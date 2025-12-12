@@ -36,7 +36,7 @@ body.hebrew-bg {
     color: #fff;
     padding: 20px 28px;
     border-radius: 10px;
-    max-width: 420px;
+    max-width: 340px;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -44,7 +44,7 @@ body.hebrew-bg {
     position: fixed;
     top: 24px;
     left: 24px;
-    right: 520px;
+    right: 440px;
     bottom: 72px;
     background: rgba(0,0,0,0.85);
     color: #fff;
