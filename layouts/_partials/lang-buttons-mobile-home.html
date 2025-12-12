@@ -1,0 +1,10 @@
+<div class="lang-buttons-mobile-home">
+  {{- range site.Home.AllTranslations }}
+    {{- if ne .Language.Lang $.Language.Lang }}
+      <a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}">
+        <img src="{{ cond (eq .Language.Lang "he") ("assets/il.svg" | absURL) ("assets/usa.svg" | absURL) }}" 
+             alt="{{ .Language.LanguageName }}" class="flag-icon">
+      </a>
+    {{- end }}
+  {{- end }}
+</div>

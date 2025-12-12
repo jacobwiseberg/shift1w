@@ -3,9 +3,18 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-<body{{ if eq site.Language.Lang "he" }} class="hebrew-bg"{{ end }}>
-  {{ partial "mobile-topbar.html" . }}
-  {{ partial "sidebar.html" . }}
+<body{{ if .IsHome }} class="home{{ if eq site.Language.Lang "he" }} hebrew-bg{{ end }}"{{ else if eq site.Language.Lang "he" }} class="hebrew-bg"{{ end }}>
+  {{ if .IsHome }}
+    {{/* On home page: hide mobile-topbar, show sidebar */}}
+    <div class="home-mobile-sidebar-wrapper">
+      {{ partial "sidebar.html" . }}
+      {{ partial "lang-buttons-mobile-home.html" . }}
+    </div>
+  {{ else }}
+    {{/* On all other pages: show mobile-topbar, hide sidebar on mobile */}}
+    {{ partial "mobile-topbar.html" . }}
+    {{ partial "sidebar.html" . }}
+  {{ end }}
   {{ block "main" . }}{{ end }}
   {{ partial "footer.html" . }}
 </body>

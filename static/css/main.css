@@ -1,3 +1,187 @@
+.profile-header h2 {
+    width: 100%;
+    text-align: inherit;
+    margin: 0;
+}
+@media (max-width: 768px) {
+    body.home .profile-hoopoe {
+        width: 64px !important;
+        height: 64px !important;
+        margin-bottom: 0.5rem;
+    }
+    body.home .profile-header {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+    }
+    body.home .profile-header h2 {
+        margin-top: 0.5rem;
+    }
+    body.home .info-box {
+        text-align: center;
+        padding: 12px 10px;
+    }
+    body.home .info-box .info-links {
+        justify-content: center;
+        text-align: center;
+        padding: 0;
+        font-size: 0.95rem;
+        flex-wrap: wrap;
+    }
+    body.home .info-links a {
+        padding: 0 2px;
+    }
+    body.home .profile-header,
+    body.home .profile {
+        justify-content: center;
+        text-align: center;
+    }
+    body.home .mobile-topbar {
+        display: none !important;
+    }
+    body.home .home-mobile-sidebar-wrapper {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        width: 100vw;
+        position: relative;
+        z-index: 20;
+        background: none;
+        gap: 24px;
+    }
+    body.home .sidebar-container {
+        position: static;
+        margin: 0 auto;
+        width: auto;
+        max-width: 340px;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    body.home .info-box,
+    body.home .nav-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        max-width: 340px;
+        min-width: 0;
+        margin: 0 auto 16px auto;
+        box-sizing: border-box;
+    }
+    .lang-buttons-mobile-home {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin: 16px 0 0 0;
+        width: 100%;
+    }
+    .lang-buttons-mobile-home .flag-icon {
+        width: 2.2em;
+        height: 1.3em;
+        border-radius: 2px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+        filter: grayscale(0.2);
+        transition: filter 0.2s, transform 0.2s;
+    }
+    .lang-buttons-mobile-home a:hover .flag-icon {
+        filter: grayscale(0) drop-shadow(0 0 2px #aad8ff);
+    }
+    body.home .sidebar-container,
+    body.home .info-box,
+    body.home .nav-box {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 340px;
+    }
+    .content-box {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        margin: 100px 16px 6rem 16px;
+        max-height: none;
+    }
+    .profile {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .profile h2 {
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+    }
+    .profile-hoopoe {
+        margin-bottom: 0.25rem;
+    }
+    .lang-buttons-mobile {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 2.5rem;
+        z-index: 100;
+        background: none;
+        padding: 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+    .lang-buttons-mobile a:hover .flag-icon {
+        filter: grayscale(0) drop-shadow(0 0 2px #aad8ff);
+    }
+    .lang-buttons {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .info-box,
+    .profile,
+    .profile-header,
+    .info-links {
+        text-align: left;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    body.hebrew-bg .info-box,
+    body.hebrew-bg .profile,
+    body.hebrew-bg .profile-header,
+    body.hebrew-bg .info-links {
+        text-align: right;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    .lang-buttons-mobile-home {
+        display: none !important;
+    }
+}
+@media (max-width: 768px) {
+    body.home .info-box {
+        padding: 12px 10px;
+    }
+    body.home .info-links {
+        padding: 0;
+        font-size: 0.95rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    body.home .info-links a {
+        padding: 0 2px;
+    }
+}
+@media (min-width: 769px) {
+    .lang-buttons-mobile-home {
+        display: none !important;
+    }
+}
 html, body {
     width: 100%;
     min-height: 100vh;
@@ -135,7 +319,6 @@ body.hebrew-bg {
     .nav-box {
         display: none;
     }
-    
     .mobile-topbar {
         display: flex;
         position: fixed;
@@ -151,57 +334,110 @@ body.hebrew-bg {
         z-index: 100;
         box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
-    
     .mobile-topbar .site-title {
         font-size: 1.25rem;
         font-weight: bold;
         color: #fff;
         text-decoration: none;
     }
-    
     .mobile-topbar nav {
         display: flex;
         gap: 16px;
         align-items: center;
     }
-    
     .mobile-topbar nav a {
         color: #fff;
         text-decoration: none;
         font-size: 0.9rem;
         transition: color 0.2s;
     }
-    
     .mobile-topbar nav a:hover {
         color: #aad8ff;
     }
-    
     .mobile-profile {
         display: flex;
         align-items: center;
         gap: 8px;
     }
-    
     .mobile-profile img {
         width: 28px;
         height: 28px;
         border-radius: 50%;
         object-fit: cover;
     }
-}
+
+    body.home .mobile-topbar {
+        display: none !important;
+    }
+    body.home .home-mobile-sidebar-wrapper {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        width: 100vw;
+        position: relative;
+        z-index: 20;
+        background: none;
+        gap: 24px;
+    }
+    body.home .sidebar-container {
+        position: static;
+        margin: 0 auto;
+        width: auto;
+        max-width: 340px;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    body.home .info-box,
+    body.home .nav-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        max-width: 340px;
+        min-width: 0;
+        margin: 0 auto 16px auto;
+        box-sizing: border-box;
+    }
+    .lang-buttons-mobile-home {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin: 16px 0 0 0;
+        width: 100%;
+    }
+    .lang-buttons-mobile-home .flag-icon {
+        width: 2.2em;
+        height: 1.3em;
+        border-radius: 2px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+        filter: grayscale(0.2);
+        transition: filter 0.2s, transform 0.2s;
+    }
+    .lang-buttons-mobile-home a:hover .flag-icon {
+        filter: grayscale(0) drop-shadow(0 0 2px #aad8ff);
+    }
 
 .info-box > p {
     margin-top: 0px;
 }
 
-.info-box a {
-    color: #fff;
-    text-decoration: underline;
-    transition: color 0.2s;
-}
-
-.info-box a:hover {
-    color: #aad8ff;
+    .info-box {
+        background: rgba(0,0,0,0.7);
+        color: #fff;
+        padding: 20px 28px;
+        border-radius: 10px;
+        max-width: 340px;
+        width: 100%;
+        font-family: 'Courier New', Courier, monospace;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
 }
 
 .profile {
@@ -298,6 +534,23 @@ body.hebrew-bg {
 }
 
 @media (max-width: 768px) {
+    body.home .sidebar-container,
+    body.home .info-box,
+    body.home .nav-box {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        left: 0;
+        right: 0;
+    }
+    body.home .sidebar-container {
+        width: 100%;
+        max-width: 340px;
+    }
+    body.home .info-box,
+    body.home .nav-box {
+        width: 100%;
+        max-width: 340px;
+    }
     .content-box {
         position: relative;
         left: auto;
