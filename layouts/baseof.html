@@ -1,21 +1,28 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<html lang="en">
 <head>
-  {{ partial "head.html" . }}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ .Site.Params.description }}">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+  <link rel="icon" href="{{ "assets/favicon.ico" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
 </head>
-<body{{ if .IsHome }} class="home{{ if eq site.Language.Lang "he" }} hebrew-bg{{ end }}"{{ else if eq site.Language.Lang "he" }} class="hebrew-bg"{{ end }}>
-  {{ if .IsHome }}
-    {{/* On home page: hide mobile-topbar, show sidebar */}}
-    <div class="home-mobile-sidebar-wrapper">
-      {{ partial "sidebar.html" . }}
-      {{ partial "lang-buttons-mobile-home.html" . }}
-    </div>
-  {{ else }}
-    {{/* On all other pages: show mobile-topbar, hide sidebar on mobile */}}
-    {{ partial "mobile-topbar.html" . }}
-    {{ partial "sidebar.html" . }}
-  {{ end }}
-  {{ block "main" . }}{{ end }}
-  {{ partial "footer.html" . }}
+<body>
+  <header>
+    <h1><a href="/">{{ .Site.Title }}</a></h1>
+    <nav>
+      <a href="https://github.com/jacobwiseberg">GitHub</a> | 
+      <a href="mailto:jake@shift1w.com">jake@shift1w.com</a> | 
+      <a href="{{ "assets/a577fd22b70dbd624d53863520ee598580f2bc024586ea7b0f1d50652f733d1c.asc" | relURL }}">PGP</a> | 
+      <a href="{{ "blog.xml" | relURL }}">RSS</a>
+    </nav>
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    <p>&copy; 2025-{{ now.Year }} {{ .Site.Params.author }}. All rights reserved.</p>
+  </footer>
 </body>
 </html>

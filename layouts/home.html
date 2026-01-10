@@ -1,2 +1,19 @@
 {{ define "main" }}
+<section>
+  {{ .Content }}
+  
+  {{ $posts := where .Site.RegularPages "Section" "blog" }}
+  {{ range $posts }}
+  <article>
+    <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+    {{ if not .Date.IsZero }}
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+    {{ end }}
+    {{ .Summary }}
+    {{ if .Truncated }}
+    <a href="{{ .RelPermalink }}">Read more...</a>
+    {{ end }}
+  </article>
+  {{ end }}
+</section>
 {{ end }}
