@@ -58,7 +58,6 @@ Cloudflare Pages will then automatically deploy the changes from `master`.
 - `content/` - Markdown content files
 - `layouts/` - HTML templates
 - `static/` - Static assets
-- `i18n/` - Internationalization files (English & Hebrew)
 - `hugo.toml` - Hugo configuration
 
 ## License
