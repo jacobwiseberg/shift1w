@@ -2,6 +2,7 @@ baseURL = 'https://shift1w.com/'
 title = 'Jacob Wiseberg'
 languageCode = 'en-us'
 copyright = 'Jacob Wiseberg'
+summaryLength = 8
 
 [outputs]
   home = ["HTML", "RSS"]
