@@ -52,6 +52,56 @@ p {
   margin-bottom: 1rem;
 }
 
+pre,
+code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+code {
+  background-color: #1b2233;
+  color: #e8e8e8;
+  padding: 0.15rem 0.35rem;
+  border-radius: 6px;
+  font-size: 0.95em;
+}
+
+pre {
+  background-color: #1b2233;
+  color: #e8e8e8;
+  padding: 1rem 1.1rem;
+  border-radius: 10px;
+  border: 1px solid #2d3548;
+  overflow-x: auto;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+.highlight {
+  background-color: #1b2233;
+  border: 1px solid #2d3548;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.highlight pre {
+  margin: 0;
+  border: none;
+  background: #1b2233 !important;
+}
+
+.highlight {
+  margin: 1.25rem 0;
+}
+
+.highlight + p,
+pre + p {
+  margin-top: 1.5rem;
+}
+
 h3 {
   font-size: 1.2rem;
   margin-top: 1.5rem;
