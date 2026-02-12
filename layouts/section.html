@@ -5,10 +5,12 @@
   
   {{ range .Pages }}
   <article>
-    <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
-    {{ if not .Date.IsZero }}
-    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-    {{ end }}
+    <div class="post-row">
+      <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+      {{ if not .Date.IsZero }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{ end }}
+    </div>
     {{ .Summary }}
     {{ if .Truncated }}
     <a href="{{ .RelPermalink }}">Read more...</a>

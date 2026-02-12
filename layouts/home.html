@@ -5,7 +5,19 @@
   {{ $posts := where .Site.RegularPages "Section" "blog" }}
   {{ range $posts }}
   <article>
-    <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ if not .Date.IsZero }} — <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>{{ end }}</h3>
+    <div class="post-row">
+      <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+      {{ if not .Date.IsZero }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{ end }}
+    </div>
+    {{ if .Description }}
+    <p class="post-desc">{{ .Description }}</p>
+    {{ else }}
+    {{ if .Summary }}
+    <p class="post-desc">{{ .Summary }}</p>
+    {{ end }}
+    {{ end }}
   </article>
   {{ end }}
 </section>
