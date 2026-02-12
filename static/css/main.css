@@ -138,15 +138,19 @@ article, section {
 }
 
 .post-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
+  column-gap: 1rem;
 }
 
 .post-row h3 {
   margin: 0;
+}
+
+.post-row time {
+  justify-self: end;
+  white-space: nowrap;
 }
 
 .post-desc {
@@ -197,5 +201,9 @@ footer {
   
   h3 {
     font-size: 1.1rem;
+  }
+
+  .post-row time {
+    font-size: 0.8rem;
   }
 }
