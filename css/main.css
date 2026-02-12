@@ -137,6 +137,23 @@ article, section {
   margin-bottom: 2rem;
 }
 
+.post-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.post-row h3 {
+  margin: 0;
+}
+
+.post-desc {
+  margin: 0.35rem 0 0;
+  color: #c4c9d4;
+}
+
 .back-link {
   color: #757575;
   font-size: 0.85rem;
