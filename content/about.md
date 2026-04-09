@@ -2,7 +2,7 @@
 title = 'About'
 +++
 
-Hi, I'm Jake! I'm a software engineer and I like to build things that help make sense large amounts of data. My initial experience started in robotics, but has moved through everything including solar energy management, platformers, and financial applications.
+Hi, I'm Jake! I'm a software engineer and I like to build systems that help make sense of large amounts of data. My initial experience started in robotics, but has moved through everything including solar energy management, platformers, and financial applications.
 
 This blog is where I'll write about the little bits of knowledge I pick up from everyday tinkering.
 
