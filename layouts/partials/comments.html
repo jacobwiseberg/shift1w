@@ -1,0 +1,63 @@
+{{ if .Params.hn_thread_id }}
+  <section class="hn-comments">
+    {{ $url := printf "https://hn.algolia.com/api/v1/items/%v" .Params.hn_thread_id }}
+    {{ $cacheOpts := dict "key" (printf "%v-preview-v4" .Params.hn_thread_id) }}
+    
+    {{ with resources.GetRemote $url $cacheOpts }}
+      {{ $data := . | transform.Unmarshal }}
+      {{/* Count total comments by finding all "id" keys in the JSON structure */}}
+      {{ $totalComments := sub (len (findRE "[\"\\{,]\\s*\"id\":" .Content)) 1 }}
+      
+      <div class="hn-header">
+        <h4>Discussion Preview</h4>
+        <div class="hn-meta">
+          {{ if $data.points }}
+            <span class="hn-points">{{ $data.points }} points</span>
+          {{ end }}
+          <a href="https://news.ycombinator.com/item?id={{ $.Params.hn_thread_id }}" class="hn-link" target="_blank" rel="noopener noreferrer">
+            View on Hacker News
+          </a>
+        </div>
+      </div>
+
+      {{ if $data.children }}
+        <div class="comments-list">
+          {{ range first 3 $data.children }}
+            <div class="comment">
+              <div class="comment-meta">
+                <span class="comment-author">{{ .author }}</span>
+                {{ if .created_at }}
+                  <span class="comment-date">{{ .created_at | time.Format "Jan 2, 2006" }}</span>
+                {{ end }}
+              </div>
+              <div class="comment-body">
+                {{ .text | plainify | htmlUnescape | truncate 220 "..." }}
+              </div>
+              
+              {{ if .children }}
+                {{ range first 1 .children }}
+                  <div class="comment reply">
+                    <div class="comment-meta">
+                      <span class="comment-author">{{ .author }}</span>
+                    </div>
+                    <div class="comment-body">
+                      {{ .text | plainify | htmlUnescape | truncate 150 "..." }}
+                    </div>
+                  </div>
+                {{ end }}
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+        
+        <div class="hn-footer">
+          <a href="https://news.ycombinator.com/item?id={{ $.Params.hn_thread_id }}" class="hn-more-btn">
+            Read all {{ $totalComments }} comments & replies &rarr;
+          </a>
+        </div>
+      {{ else }}
+        <p class="hn-no-comments">No comments yet. Be the first to start the discussion!</p>
+      {{ end }}
+    {{ end }}
+  </section>
+{{ end }}

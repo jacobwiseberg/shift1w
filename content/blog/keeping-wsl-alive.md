@@ -1,6 +1,7 @@
 +++
 date = '2026-02-08T09:39:56+01:00'
 title = 'Keeping WSL Alive'
+hn_thread_id = 47776781
 +++
 
 WSL is one of my favorite Windows tools, but it tends to shut itself down quicker than expected.

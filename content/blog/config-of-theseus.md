@@ -1,6 +1,7 @@
 +++
 date = '2026-04-15T17:13:54+02:00'
 title = 'My .config Ship of Theseus'
+hn_thread_id = 47886157
 +++
 
 Micromanaging my .config folder has allowed me to create a simple and effective install file so I can pull my setup into a new machine instantly, and modify my environment intentionally.
