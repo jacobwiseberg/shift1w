@@ -214,7 +214,7 @@ footer {
   margin-top: 4rem;
   padding: 1.5rem;
   background: #23293b;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -244,17 +244,6 @@ footer {
 .hn-points {
   font-size: 0.85rem;
   font-weight: 600;
-}
-
-.hn-link {
-  font-size: 0.85rem;
-  color: #9e9e9e;
-  transition: all 0.2s;
-}
-
-.hn-link:hover {
-  color: #64b5f6;
-  text-decoration: none;
 }
 
 .comments-list {
@@ -325,11 +314,11 @@ footer {
 
 @media (max-width: 600px) {
   .hn-comments {
-    padding: 1.5rem;
+    padding: 1rem;
     margin-top: 3rem;
-    border-radius: 0;
-    margin-left: -0.75rem;
-    margin-right: -0.75rem;
+    border-radius: 10px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .hn-header h3,

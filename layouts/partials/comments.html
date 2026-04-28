@@ -12,11 +12,8 @@
         <h4>Discussion Preview</h4>
         <div class="hn-meta">
           {{ if $data.points }}
-            <span class="hn-points">{{ $data.points }} points</span>
+            <span class="hn-points">{{ $data.points }} points on <a href="https://news.ycombinator.com/item?id={{ $.Params.hn_thread_id }}" target="_blank" rel="noopener noreferrer">HN</a></span>
           {{ end }}
-          <a href="https://news.ycombinator.com/item?id={{ $.Params.hn_thread_id }}" class="hn-link" target="_blank" rel="noopener noreferrer">
-            View on Hacker News
-          </a>
         </div>
       </div>
 
